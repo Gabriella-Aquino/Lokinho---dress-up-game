@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #F7E4CB;
+  --color-ground: #CE903F;
+  --color-primary: #EFAAE8;
+  --color-accent: #BDB8FF;
+}
+
+#root{
+  width: 100%;
+  height: 100vh;
+}
