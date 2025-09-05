@@ -18,4 +18,5 @@ declare interface IClothe {
   category: ICategory;
   customIndex?: number;
   imageToShow: string;
+  select?: boolean
 }
