@@ -9,6 +9,6 @@ export const CLOTHES_ORDER: Record<ICategory, number> = {
   shirt: 50,
   bottoms: 40,
   coat: 55,
-  socks: 30,
-  shoes: 20,
+  shoes: 30,
+  socks: 20,
 };
