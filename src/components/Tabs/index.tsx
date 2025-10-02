@@ -109,7 +109,7 @@ function Tabs({ tabs }: TabsProps) {
   const carouselRef = useRef<Carousel>(null);
 
   return (
-    <div className="relative w-full">
+    <div className="relative w-full hidden md:block">
       <Carousel
         ref={carouselRef}
         responsive={responsive}
