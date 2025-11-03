@@ -10,7 +10,7 @@ interface ClothCardProps {
 }
 
 function ClothCard({ item, shape='square'}:ClothCardProps) {
-  return <div className={cn(["w-16 border-2 border-primary rounded-2xl", Shape[shape], item.select && 'border-4'])}>
+  return <div className={cn(["w-16 min-w-16 border-2 border-primary rounded-2xl", Shape[shape], item.select && 'border-4'])}>
     <img className="w-full" src={item.imageToShow} alt={item.name} />
   </div>;
 }

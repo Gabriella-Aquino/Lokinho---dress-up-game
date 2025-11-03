@@ -2,19 +2,20 @@ import React, { useState } from 'react'
 import { shirts } from '../clothes';
 import { FaTshirt } from "react-icons/fa";
 import type { ICategory, IClothe } from '../types/clothe';
-import Tabs from '../components/Tabs';
-
+import { PiDressFill } from "react-icons/pi";
+import { GiSkirt } from "react-icons/gi";
+import HairIcon from "../../public/assets/icon/hair.svg?react"
+import RingIcon from "../../public/assets/icon/ring.svg?react"
+import HairItemIcon from "../../public/assets/icon/hair_item.svg?react"
 
 export function useCloset() {
   const TABS = [
-    { id: 1, icon: <FaTshirt color="white" size={30} />, value: "shirt" },
-    { id: 2, icon: <FaTshirt color="white" size={30} />, value: "shirt" },
-    { id: 3, icon: <FaTshirt color="white" size={30} />, value: "shirt" },
-    { id: 4, icon: <FaTshirt color="white" size={30} />, value: "shirt" },
-    { id: 5, icon: <FaTshirt color="white" size={30} />, value: "shirt" },
-    { id: 6, icon: <FaTshirt color="white" size={30} />, value: "shirt" },
-    { id: 7, icon: <FaTshirt color="white" size={30} />, value: "shirt" },
-    { id: 8, icon: <FaTshirt color="white" size={30} />, value: "shirt" },
+    { id: 1, icon: <HairIcon width={28} height={28}/>, value: "shirt" },
+    { id: 2, icon: <HairItemIcon color="white" width={28} height={28} />, value: "shirt" },
+    { id: 3, icon: <RingIcon width={28} height={28} />, value: "shirt" },
+    { id: 4, icon: <PiDressFill color="white" size={28} />, value: "dress" },
+    { id: 5, icon: <FaTshirt color="white" size={28} />, value: "shirt" },
+    { id: 6, icon: <GiSkirt color="white" size={28} />, value: "bottom" },
   ];
   const [layers, setLayers] = useState<Partial<Record<ICategory, IClothe>>>({
     shirt: {

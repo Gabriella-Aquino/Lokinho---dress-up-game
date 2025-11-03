@@ -59,12 +59,12 @@ function Wardrobe({ items }: WardrobeProps) {
   }
 
   return (
-    <div className="w-full p-5 rounded-tl-3xl rounded-tr-3xl bg-[#F3F3F3] min-h-20">
-      <Carousel responsive={responsive} arrows={false} className="flex gap-3">
+    <div className="flex w-full p-3 justify-center rounded-tl-3xl rounded-tr-3xl bg-[#F3F3F3] max-h-36 overflow-y-auto">
+      <div className="grid grid-cols-4 gap-2">
         {items.map((item) => (
           <ClothCard item={item} key={item.id}/>
         ))}
-      </Carousel>
+      </div>
     </div>
   );
 }
