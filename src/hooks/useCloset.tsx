@@ -24,7 +24,11 @@ import type { ITab } from "../types/tab";
 
 export function useCloset() {
   const TABS: ITab[] = [
-    { id: 1, icon: <HairIcon width={28} height={28} className="scale-z-150"/>, value: "hair" },
+    {
+      id: 1,
+      icon: <HairIcon width={28} height={28} className="scale-z-150" />,
+      value: "hair",
+    },
     {
       id: 2,
       icon: <HairItemIcon color="white" width={28} height={28} />,
@@ -61,11 +65,21 @@ export function useCloset() {
 
   const handleSelectClothing = (clothing: IClothing) => {
     setLayers((prev) => ({ ...prev, [clothing.category]: clothing }));
+
+    setClothesByCategory((prev) => ({
+      ...prev,
+      [clothing.category]: prev[clothing.category].map((item) => ({
+        ...item,
+        select: item.id === clothing.id,
+      })),
+    }));
   };
 
   const [activeTab, setActiveTab] = useState(TABS[0]);
 
-  const CLOTHES_BY_CATEGORY: Record<ICategory, IClothing[]> = {
+  const [CLOTHES_BY_CATEGORY, setClothesByCategory] = useState<
+    Record<ICategory, IClothing[]>
+  >({
     hat: hat,
     hair: hair,
     items: items,
@@ -75,7 +89,7 @@ export function useCloset() {
     coat: coat,
     socks: socks,
     shoes: shoes,
-  };
+  });
 
   useEffect(() => {
     console.log("Layers atuais:", layers);
