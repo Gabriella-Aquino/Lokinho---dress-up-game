@@ -53,6 +53,7 @@ const responsive: ResponsiveType = {
   },
 };
 
+
 function Wardrobe({ items }: WardrobeProps) {
   if (!items) {
     return;

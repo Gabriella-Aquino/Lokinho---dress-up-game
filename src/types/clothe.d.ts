@@ -2,8 +2,7 @@
 export type ICategory =
   | "hat"
   | "hair"
-  | "hairItems"
-  | "itens"
+  | "items"
   | "dress"
   | "shirt"
   | "bottoms"

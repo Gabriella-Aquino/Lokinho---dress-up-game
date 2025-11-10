@@ -6,7 +6,7 @@ import TabsCol from "./components/Tabs/tabCol";
 import { useCloset } from "./hooks/useCloset";
 
 function App() {
-  const { TABS, CLOTHES_BY_CATEGORY, activeTab, layers } = useCloset();
+  const { TABS, CLOTHES_BY_CATEGORY, activeTab, setActiveTab, layers } = useCloset();
 
   return (
     <div className="fixed inset-0 flex justify-center w-full h-full bg-background overflow-hidden">
@@ -14,7 +14,7 @@ function App() {
 
       <Doll layers={layers} />
       <div className="absolute right-1 top-10">
-        <TabsCol tabs={TABS} />
+        <TabsCol tabs={TABS} onTabClick={setActiveTab} activeTab={activeTab}/>
       </div>
       <div className="absolute bottom-0 left-0 w-full">
         <Tabs tabs={TABS} />

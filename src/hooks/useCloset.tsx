@@ -1,21 +1,37 @@
-import React, { useState } from 'react'
-import { shirts } from '../clothes';
+import React, { useState } from "react";
+import { bottom, coat, dress, hair, hat, items, shirts, shoes, socks } from "../clothes";
 import { FaTshirt } from "react-icons/fa";
-import type { ICategory, IClothe } from '../types/clothe';
+import type { ICategory, IClothe } from "../types/clothe";
 import { PiDressFill } from "react-icons/pi";
 import { GiSkirt } from "react-icons/gi";
-import HairIcon from "../../public/assets/icon/hair.svg?react"
-import RingIcon from "../../public/assets/icon/ring.svg?react"
-import HairItemIcon from "../../public/assets/icon/hair_item.svg?react"
+import HairIcon from "../../public/assets/icon/hair.svg?react";
+import RingIcon from "../../public/assets/icon/ring.svg?react";
+import HairItemIcon from "../../public/assets/icon/hair_item.svg?react";
+import CoatIcon from "../../public/assets/icon/coat.svg?react";
+import ShoesIcon from "../../public/assets/icon/shoes.svg?react";
+import SockIcon from "../../public/assets/icon/sock.svg?react"
+import type { ITab } from "../types/tab";
 
 export function useCloset() {
-  const TABS = [
-    { id: 1, icon: <HairIcon width={28} height={28}/>, value: "shirt" },
-    { id: 2, icon: <HairItemIcon color="white" width={28} height={28} />, value: "shirt" },
-    { id: 3, icon: <RingIcon width={28} height={28} />, value: "shirt" },
+  const TABS: ITab[] = [
+    { id: 1, icon: <HairIcon width={28} height={28} />, value: "hair" },
+    {
+      id: 2,
+      icon: <HairItemIcon color="white" width={28} height={28} />,
+      value: "hat",
+    },
+    { id: 3, icon: <RingIcon width={28} height={28} />, value: "" },
     { id: 4, icon: <PiDressFill color="white" size={28} />, value: "dress" },
     { id: 5, icon: <FaTshirt color="white" size={28} />, value: "shirt" },
     { id: 6, icon: <GiSkirt color="white" size={28} />, value: "bottom" },
+    { id: 7, icon: <CoatIcon color="white" />, value: "coat" },
+    {
+      id: 8,
+      icon: <ShoesIcon fill="white" width={28} height={28} />,
+      value: "coat",
+    },
+    { id: 9, icon: <SockIcon width={28} height={28}/>, value: "socks" },
+    
   ];
   const [layers, setLayers] = useState<Partial<Record<ICategory, IClothe>>>({
     shirt: {
@@ -37,22 +53,22 @@ export function useCloset() {
   const [activeTab, setActiveTab] = useState(TABS[0]);
 
   const CLOTHES_BY_CATEGORY: Record<ICategory, IClothe[]> = {
-    hat: [],
-    hair: [],
-    hairItems: [],
-    itens: [],
-    dress: [],
+    hat: hat,
+    hair: hair,
+    items: items,
+    dress: dress,
     shirt: shirts,
-    bottoms: [],
-    coat: [],
-    socks: [],
-    shoes: [],
+    bottoms: bottom,
+    coat: coat,
+    socks: socks,
+    shoes: shoes,
   };
 
   return {
     TABS,
-    layers, 
+    layers,
     activeTab,
-    CLOTHES_BY_CATEGORY
-  }
+    setActiveTab,
+    CLOTHES_BY_CATEGORY,
+  };
 }

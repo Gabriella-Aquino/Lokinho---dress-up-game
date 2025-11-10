@@ -2,7 +2,17 @@ import type { IClothe } from "./types/clothe";
 
 export const hat = [];
 
-export const hair = [];
+export const hair:IClothe[] = [
+  {
+    id: 1,
+    name: "void",
+    category: "shirt",
+    image: "/assets/shirt/Shirt 3.png",
+    imageToShow: "/assets/icon/block.svg",
+  },
+];
+
+export const items:IClothe[] = []
 
 export const shirts:IClothe[] = [
   {
@@ -49,8 +59,13 @@ export const shirts:IClothe[] = [
   },
 ];
 
-export const bottom = [];
+export const dress:IClothe[] = []
 
-export const shoes = [];
+export const bottom: IClothe[] = [];
 
-export const socks = [];
+export const coat: IClothe[] = [];
+
+export const shoes: IClothe[] = [];
+
+export const socks: IClothe[] = [];
+

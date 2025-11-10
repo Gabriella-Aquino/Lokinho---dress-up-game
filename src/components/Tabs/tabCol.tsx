@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import { cn } from "../../lib/utils";
 import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
+import type { ITab } from "../../types/tab";
 
 interface TabsProps {
-  tabs: { id: number; icon: string | React.ReactNode; value: string }[];
+  tabs:ITab[];
+  activeTab: ITab;
   itemsPerPage?: number;
+  onTabClick: (tab: ITab) => void;
 }
 
-function TabsCol({ tabs, itemsPerPage = 5 }: TabsProps) {
+function TabsCol({ tabs, itemsPerPage = 5, onTabClick, activeTab }: TabsProps) {
   const [page, setPage] = useState(0);
 
   const start = page * itemsPerPage;
@@ -34,8 +37,8 @@ function TabsCol({ tabs, itemsPerPage = 5 }: TabsProps) {
         {visibleTabs.map((tab) => (
           <div
             key={tab.id}
-            className="py-1.5 px-1.5 rounded-full bg-primary cursor-pointer flex items-center justify-center hover:bg-accent transition-colors"
-            onClick={() => console.log(tab.id)}
+            className={cn(["py-1.5 px-1.5 rounded-full bg-primary cursor-pointer flex items-center justify-center hover:bg-accent transition-colors",tab.id == activeTab.id && "bg-accent"])}
+            onClick={() => onTabClick(tab)}
           >
             {typeof tab.icon === "string" ? (
               <img
