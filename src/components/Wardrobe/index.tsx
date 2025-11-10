@@ -1,11 +1,12 @@
 import React from "react";
-import type { IClothe } from "../../types/clothe";
+import type { IClothing } from "../../types/clothe";
 import ClothCard from "../ClothCard";
 import Carousel, { type ResponsiveType } from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
 interface WardrobeProps {
-  items: IClothe[];
+  items: IClothing[];
+  onClickClothing: (clothing: IClothing) => void;
 }
 
 const responsive: ResponsiveType = {
@@ -53,8 +54,7 @@ const responsive: ResponsiveType = {
   },
 };
 
-
-function Wardrobe({ items }: WardrobeProps) {
+function Wardrobe({ items, onClickClothing }: WardrobeProps) {
   if (!items) {
     return;
   }
@@ -63,7 +63,7 @@ function Wardrobe({ items }: WardrobeProps) {
     <div className="flex w-full p-3 justify-center rounded-tl-3xl rounded-tr-3xl bg-[#F3F3F3] max-h-36 overflow-y-auto">
       <div className="grid grid-cols-4 gap-2">
         {items.map((item) => (
-          <ClothCard item={item} key={item.id}/>
+          <ClothCard item={item} key={item.id} onClick={() => onClickClothing(item)}/>
         ))}
       </div>
     </div>

@@ -10,12 +10,12 @@ export type ICategory =
   | "socks"
   | "shoes";
 
-declare interface IClothe {
+declare interface IClothing {
   id: number;
   name: string;
   image: string;
   category: ICategory;
   customIndex?: number;
   imageToShow: string;
-  select?: boolean
+  select?: boolean;
 }

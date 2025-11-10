@@ -1,10 +1,10 @@
 import React from "react";
-import type { ICategory, IClothe } from "../../types/clothe";
+import type { ICategory, IClothing } from "../../types/clothe";
 import { CLOTHES_ORDER } from "../../clothesOrder";
 import { cn } from "../../lib/utils";
 
 interface DollProps {
-  layers: Partial<Record<ICategory, IClothe | undefined>>;
+  layers: Partial<Record<ICategory, IClothing | undefined>>;
 }
 
 function Doll({ layers }: DollProps) {
@@ -20,12 +20,12 @@ function Doll({ layers }: DollProps) {
 
           return (
             <img
-              key={clothe.id}
+              key={`${category}-${clothe.id}`}
               src={clothe.image}
               className={cn([
-                "absolute top-0 left-0 w-full h-auto",
-                ZIndex && ZIndex,
+                "absolute top-0 left-0 w-full h-auto"
               ])}
+              style={{ zIndex: ZIndex }}
               alt={clothe.name}
             />
           );
