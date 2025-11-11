@@ -1,4 +1,4 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import type { ICategory, IClothing } from "../../types/clothe";
 import { CLOTHES_ORDER } from "../../clothesOrder";
 import { cn } from "../../lib/utils";
@@ -7,10 +7,10 @@ interface DollProps {
   layers: Partial<Record<ICategory, IClothing | undefined>>;
 }
 
-function Doll({ layers }: DollProps) {
+const Doll = forwardRef<HTMLDivElement, DollProps>(({ layers }, ref) => {
   return (
     <div className="relative aspect-[3/4] h-[77vh]">
-      <div className="absolute top-0 left-0 w-full h-full ">
+      <div ref={ref} className="absolute top-0 left-0 w-full h-full ">
         <img src="/assets/doll.png" alt="boneca" className="w-full h-auto" />
         {Object.entries(layers).map(([category, clothe]) => {
           if (!clothe) return null;
@@ -33,6 +33,7 @@ function Doll({ layers }: DollProps) {
       </div>
     </div>
   );
-}
+})
 
+Doll.displayName = "Doll";
 export default Doll;
