@@ -7,20 +7,24 @@ type ShapeVariants = keyof typeof Shape;
 interface ClothCardProps {
   item: IClothing;
   shape?: ShapeVariants;
-  onClick: () => void
+  onClick: () => void;
 }
 
 function ClothCard({ item, shape = "square", onClick }: ClothCardProps) {
   return (
     <div
       className={cn([
-        "w-16 min-w-16 border-2 border-primary rounded-2xl",
+        "w-16 min-w-16 max-w-16 border-2 flex items-center justify-center border-primary rounded-2xl",
         Shape[shape],
         item.select && "border-4",
       ])}
       onClick={onClick}
     >
-      <img className="w-full" src={item.imageToShow} alt={item.name} />
+      <img
+        className="w-14 h-14 object-contain"
+        src={item.imageToShow}
+        alt={item.name}
+      />
     </div>
   );
 }
