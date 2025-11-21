@@ -76,6 +76,27 @@ export const bottom: IClothing[] = [
     image: "/assets/Bottom/skirt1.png",
     imageToShow: "/assets/Bottom/toShow/skirt1_to_show.png",
   },
+  {
+    id: 3,
+    name: "calça amarela",
+    category: "bottoms",
+    image: "/assets/Bottom/calça_amarela.png",
+    imageToShow: "/assets/Bottom/toShow/calça_amarela_to_show.png",
+  },
+  {
+    id: 4,
+    name: "calça jeans",
+    category: "bottoms",
+    image: "/assets/Bottom/calça_jeans.png",
+    imageToShow: "/assets/Bottom/toShow/calça_jeans_to_show.png",
+  },
+  {
+    id: 5,
+    name: "calça jeans",
+    category: "bottoms",
+    image: "/assets/Bottom/calça_jeans_flores.png",
+    imageToShow: "/assets/Bottom/toShow/calça_jeans_flores_to_show.png",
+  },
 ];
 
 export const coat: IClothing[] = [];
