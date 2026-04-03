@@ -6,9 +6,30 @@ export const hair: IClothing[] = [
   {
     id: 1,
     name: "void",
-    category: "shirt",
-    image: "/assets/shirt/Shirt 3.png",
+    category: "hair",
+    image: "/assets/Hair/Hair_1.png",
     imageToShow: "/assets/icon/block.svg",
+  },
+  {
+    id: 2,
+    name: "cabelo 1",
+    category: "hair",
+    image: "/assets/Hair/Hair_1.png",
+    imageToShow: "/assets/Hair/toShow/Hair_1_to_show.png",
+  },
+  {
+    id: 3,
+    name: "cabelo 2",
+    category: "hair",
+    image: "/assets/Hair/Hair_2.png",
+    imageToShow: "/assets/Hair/toShow/Hair_2_to_show.png",
+  },
+  {
+    id: 4,
+    name: "cabelo 3",
+    category: "hair",
+    image: "/assets/Hair/Hair_3.png",
+    imageToShow: "/assets/Hair/toShow/Hair_3_to_show.png",
   },
 ];
 
