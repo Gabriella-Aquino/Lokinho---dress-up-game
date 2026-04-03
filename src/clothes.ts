@@ -59,7 +59,36 @@ export const shirt: IClothing[] = [
   },
 ];
 
-export const dress: IClothing[] = [];
+export const dress: IClothing[] = [
+  {
+    id: 1,
+    name: "void",
+    category: "dress",
+    image: "/assets/bra.png",
+    imageToShow: "/assets/icon/block.svg",
+  },
+  {
+    id: 2,
+    name: "vestido 1",
+    category: "dress",
+    image: "/assets/Dress/dress_1.png",
+    imageToShow: "/assets/Dress/toShow/dress_1_to_show.png",
+  },
+  {
+    id: 3,
+    name: "vestido 2",
+    category: "dress",
+    image: "/assets/Dress/dress_2.png",
+    imageToShow: "/assets/Dress/toShow/dress_2_to_show.png",
+  },
+  {
+    id: 4,
+    name: "vestido 3",
+    category: "dress",
+    image: "/assets/Dress/dress_3.png",
+    imageToShow: "/assets/Dress/toShow/dress_3_to_show.png",
+  },
+];
 
 export const bottom: IClothing[] = [
   {
