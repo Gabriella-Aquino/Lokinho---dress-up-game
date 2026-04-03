@@ -1,4 +1,3 @@
-import React from "react";
 import type { ICategory, IClothing } from "../../types/clothe";
 import { CLOTHES_ORDER } from "../../clothesOrder";
 import { cn } from "../../lib/utils";
@@ -9,7 +8,7 @@ interface DollProps {
 
 function Doll({ layers }: DollProps) {
   return (
-    <div className="relative aspect-[3/4] h-[77vh]">
+    <div className="relative aspect-[3/4] h-[58vh] max-h-[520px] md:h-full md:max-h-none">
       <div className="absolute top-0 left-0 w-full h-full ">
         <img src="/assets/doll.png" alt="boneca" className="w-full h-auto" />
         {Object.entries(layers).map(([category, clothe]) => {

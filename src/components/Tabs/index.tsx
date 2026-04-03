@@ -1,53 +1,29 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import Carousel, { type ResponsiveType } from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { cn } from "../../lib/utils";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
+import type { ITab } from "../../types/tab";
 
 interface TabsProps {
-  tabs: { id: number; icon: string | React.ReactNode; value: string }[];
+  tabs: ITab[];
+  activeTab: ITab;
+  onTabClick: (tab: ITab) => void;
 }
 const responsive: ResponsiveType = {
-  superLargeDesktop: {
-    breakpoint: { max: 4000, min: 3000 },
-    items: 6,
-    slidesToSlide: 3,
-  },
-  largeDesktop: {
-    breakpoint: { max: 3000, min: 1920 },
-    items: 5,
-    slidesToSlide: 3,
-  },
   desktop: {
     breakpoint: { max: 1920, min: 1280 },
-    items: 4,
+    items: 5,
     slidesToSlide: 2,
   },
   smallDesktop: {
     breakpoint: { max: 1279, min: 1024 },
-    items: 3,
+    items: 4,
     slidesToSlide: 2,
   },
   tablet: {
     breakpoint: { max: 1023, min: 768 },
-    items: 3,
-    slidesToSlide: 1,
-  },
-  // por fazer: de tablet pra cima controlar pq o carousel vai pra cima, talvez nem seja preciso todos os breakpoints aqui
-
-  smallTablet: {
-    breakpoint: { max: 767, min: 600 },
     items: 4,
-    slidesToSlide: 1,
-  },
-  mobile: {
-    breakpoint: { max: 599, min: 375 },
-    items: 4,
-    slidesToSlide: 1,
-  },
-  smallMobile: {
-    breakpoint: { max: 374, min: 0 },
-    items: 3,
     slidesToSlide: 1,
   },
 };
@@ -105,11 +81,11 @@ const CustomRightArrow = ({ onClick, className }: ArrowProps) => (
   </button>
 );
 
-function Tabs({ tabs }: TabsProps) {
+function Tabs({ tabs, activeTab, onTabClick }: TabsProps) {
   const carouselRef = useRef<Carousel>(null);
 
   return (
-    <div className="relative w-full hidden md:block">
+    <div className="relative w-full">
       <Carousel
         ref={carouselRef}
         responsive={responsive}
@@ -118,23 +94,18 @@ function Tabs({ tabs }: TabsProps) {
         renderButtonGroupOutside
         swipeable
         draggable
-        className="mx-10 ml-12"
+        className="mx-8"
       >
         {tabs.map((tab) => (
           <div
             key={tab.id}
-            className="relative z-50 py-2 px-4 rounded-2xl bg-primary w-min cursor-pointer flex hover:bg-accent"
-            onClick={() => {console.log(tab.id)}}
-          >
-            {typeof tab.icon === "string" ? (
-              <img
-                src={tab.icon}
-                alt={tab.value}
-                className="w-[30px] h-[30px]"
-              />
-            ) : (
-              tab.icon
+            className={cn(
+              "relative z-50 flex w-min cursor-pointer rounded-2xl px-3 py-2 transition-colors",
+              tab.id === activeTab.id ? "bg-accent" : "bg-primary hover:bg-accent"
             )}
+            onClick={() => onTabClick(tab)}
+          >
+            {tab.icon}
           </div>
         ))}
       </Carousel>

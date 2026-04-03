@@ -1,26 +1,43 @@
-import Tabs from "./components/Tabs";
-import Wardrobe from "./components/Wardrobe";
+import DesktopLayout from "./components/layouts/DesktopLayout";
+import MobileLayout from "./components/layouts/MobileLayout";
 import type { ICategory } from "./types/clothe";
-import Doll from "./components/doll";
-import TabsCol from "./components/Tabs/tabCol";
 import { useCloset } from "./hooks/useCloset";
+import { useMediaQuery } from "./hooks/useMediaQuery";
 
 function App() {
-  const { TABS, CLOTHES_BY_CATEGORY, activeTab, setActiveTab, layers, handleSelectClothing } = useCloset();
+  const {
+    TABS,
+    CLOTHES_BY_CATEGORY,
+    activeTab,
+    setActiveTab,
+    layers,
+    handleSelectClothing,
+  } = useCloset();
+  const activeItems = CLOTHES_BY_CATEGORY[activeTab.value as ICategory];
+  const isDesktop = useMediaQuery("(min-width: 768px)");
 
   return (
-    <div className="fixed inset-0 flex justify-center w-full h-full bg-background overflow-hidden">
-      <div className="absolute w-full left-0 bottom-0 h-80 bg-ground" />
-
-      <Doll layers={layers} />
-      <div className="absolute right-1 top-10 z-[1000]">
-        <TabsCol tabs={TABS} onTabClick={setActiveTab} activeTab={activeTab}/>
-      </div>
-      <div className="absolute bottom-0 left-0 w-full">
-        <Tabs tabs={TABS} />
-        <Wardrobe onClickClothing={handleSelectClothing} items={CLOTHES_BY_CATEGORY[activeTab.value as ICategory]} />
-      </div>
-    </div>
+    <main className="fixed inset-0 overflow-hidden bg-background">
+      {isDesktop ? (
+        <DesktopLayout
+          tabs={TABS}
+          activeTab={activeTab}
+          onTabClick={setActiveTab}
+          layers={layers}
+          items={activeItems}
+          onSelectClothing={handleSelectClothing}
+        />
+      ) : (
+        <MobileLayout
+          tabs={TABS}
+          activeTab={activeTab}
+          onTabClick={setActiveTab}
+          layers={layers}
+          items={activeItems}
+          onSelectClothing={handleSelectClothing}
+        />
+      )}
+    </main>
   );
 }
 
