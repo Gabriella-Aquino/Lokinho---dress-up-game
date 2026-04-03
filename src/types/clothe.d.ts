@@ -2,7 +2,8 @@
 export type ICategory =
   | "hat"
   | "hair"
-  | "items"
+  | "hairItems"
+  | "itens"
   | "dress"
   | "shirt"
   | "bottoms"
@@ -10,12 +11,11 @@ export type ICategory =
   | "socks"
   | "shoes";
 
-declare interface IClothing {
+declare interface IClothe {
   id: number;
   name: string;
   image: string;
   category: ICategory;
   customIndex?: number;
   imageToShow: string;
-  select?: boolean;
 }

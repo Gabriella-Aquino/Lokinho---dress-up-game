@@ -1,34 +1,18 @@
 import { cn } from "../../lib/utils";
-import type { IClothing } from "../../types/clothe";
+import type { IClothe } from "../../types/clothe";
 import { Shape } from "./variants";
 
-type ShapeVariants = keyof typeof Shape;
+type ShapeVariants = keyof typeof Shape 
 
 interface ClothCardProps {
-  item: IClothing;
+  item: IClothe
   shape?: ShapeVariants;
-  onClick: () => void;
 }
 
-function ClothCard({ item, shape = "square", onClick }: ClothCardProps) {
-  return (
-    <button
-      type="button"
-      className={cn([
-        "w-16 min-w-16 max-w-16 border-2 flex items-center justify-center border-primary rounded-2xl",
-        Shape[shape],
-        item.select && "border-4",
-      ])}
-      onClick={onClick}
-      aria-label={`Vestir ${item.name}`}
-    >
-      <img
-        className="w-14 h-14 object-contain"
-        src={item.imageToShow}
-        alt={item.name}
-      />
-    </button>
-  );
+function ClothCard({ item, shape='square'}:ClothCardProps) {
+  return <div className={cn(["w-20 border-2 border-primary rounded-2xl", Shape[shape]])}>
+    <img className="w-full" src={item.imageToShow} alt={item.name} />
+  </div>;
 }
 
 export default ClothCard;
