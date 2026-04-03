@@ -97,6 +97,35 @@ export const bottom: IClothing[] = [
     image: "/assets/Bottom/calça_jeans_flores.png",
     imageToShow: "/assets/Bottom/toShow/calça_jeans_flores_to_show.png",
   },
+  {
+    id: 6,
+    name: "macacão",
+    category: "bottoms",
+    customIndex: 55,
+    image: "/assets/Bottom/macacão.png",
+    imageToShow: "/assets/Bottom/toShow/macacão_to_show.png",
+  },
+  {
+    id: 7,
+    name: "short balonê",
+    category: "bottoms",
+    image: "/assets/Bottom/short_balone.png",
+    imageToShow: "/assets/Bottom/toShow/short_balone_to_show.png",
+  },
+  {
+    id: 8,
+    name: "short curto",
+    category: "bottoms",
+    image: "/assets/Bottom/short_jeans_curto.png",
+    imageToShow: "/assets/Bottom/toShow/short_jeans_curto_to_show.png",
+  },
+  {
+    id: 9,
+    name: "saia rodada rosa",
+    category: "bottoms",
+    image: "/assets/Bottom/saia_rodada_rosa.png",
+    imageToShow: "/assets/Bottom/toShow/saia_rodada_rosa_to_show.png",
+  },
 ];
 
 export const coat: IClothing[] = [];
