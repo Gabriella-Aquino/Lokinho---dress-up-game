@@ -1,6 +1,5 @@
 import type { IClothing } from "../../types/clothe";
 import ClothCard from "../ClothCard";
-import "react-multi-carousel/lib/styles.css";
 
 interface WardrobeProps {
   items: IClothing[];
@@ -10,7 +9,7 @@ interface WardrobeProps {
 
 function Wardrobe({ items, onClickClothing }: WardrobeProps) {
   if (!items) {
-    return;
+    return null;
   }
 
   return (

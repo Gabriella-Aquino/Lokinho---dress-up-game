@@ -13,28 +13,16 @@ interface TabsProps {
 const responsive: ResponsiveType = {
   desktop: {
     breakpoint: { max: 1920, min: 1280 },
-    items: 6,
+    items: 5,
     slidesToSlide: 2,
   },
   smallDesktop: {
     breakpoint: { max: 1279, min: 1024 },
-    items: 5,
+    items: 4,
     slidesToSlide: 2,
   },
   tablet: {
     breakpoint: { max: 1023, min: 768 },
-    items: 5,
-    slidesToSlide: 1,
-  },
-  // por fazer: de tablet pra cima controlar pq o carousel vai pra cima, talvez nem seja preciso todos os breakpoints aqui
-
-  smallTablet: {
-    breakpoint: { max: 767, min: 600 },
-    items: 4,
-    slidesToSlide: 1,
-  },
-  mobile: {
-    breakpoint: { max: 599, min: 375 },
     items: 4,
     slidesToSlide: 1,
   },
@@ -97,7 +85,7 @@ function Tabs({ tabs, activeTab, onTabClick }: TabsProps) {
   const carouselRef = useRef<Carousel>(null);
 
   return (
-    <div className="relative w-full hidden md:block">
+    <div className="relative w-full">
       <Carousel
         ref={carouselRef}
         responsive={responsive}
