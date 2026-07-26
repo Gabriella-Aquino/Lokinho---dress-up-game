@@ -6,21 +6,21 @@ import { useMediaQuery } from "./hooks/useMediaQuery";
 
 function App() {
   const {
-    TABS,
-    CLOTHES_BY_CATEGORY,
+    tabs,
+    clothesByCategory,
     activeTab,
     setActiveTab,
     layers,
     handleSelectClothing,
   } = useCloset();
-  const activeItems = CLOTHES_BY_CATEGORY[activeTab.value as ICategory];
+  const activeItems = clothesByCategory[activeTab.value as ICategory];
   const isDesktop = useMediaQuery("(min-width: 768px)");
 
   return (
     <main className="fixed inset-0 overflow-hidden bg-background">
       {isDesktop ? (
         <DesktopLayout
-          tabs={TABS}
+          tabs={tabs}
           activeTab={activeTab}
           onTabClick={setActiveTab}
           layers={layers}
@@ -29,7 +29,7 @@ function App() {
         />
       ) : (
         <MobileLayout
-          tabs={TABS}
+          tabs={tabs}
           activeTab={activeTab}
           onTabClick={setActiveTab}
           layers={layers}

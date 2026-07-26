@@ -23,7 +23,7 @@ import SockIcon from "../../public/assets/icon/sock.svg?react";
 import type { ITab } from "../types/tab";
 
 export function useCloset() {
-  const TABS: ITab[] = [
+  const tabs: ITab[] = [
     {
       id: 1,
       icon: <HairIcon width={28} height={28} className="scale-z-150" />,
@@ -75,9 +75,9 @@ export function useCloset() {
     }));
   };
 
-  const [activeTab, setActiveTab] = useState(TABS[0]);
+  const [activeTab, setActiveTab] = useState(tabs[0]);
 
-  const [CLOTHES_BY_CATEGORY, setClothesByCategory] = useState<
+  const [clothesByCategory, setClothesByCategory] = useState<
     Record<ICategory, IClothing[]>
   >({
     hat: hat,
@@ -92,11 +92,11 @@ export function useCloset() {
   });
 
   return {
-    TABS,
+    tabs,
     layers,
     activeTab,
     setActiveTab,
-    CLOTHES_BY_CATEGORY,
+    clothesByCategory,
     setLayers,
     handleSelectClothing,
   };

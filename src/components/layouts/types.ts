@@ -9,6 +9,6 @@ export interface ClosetLayoutProps {
   activeTab: ITab;
   onTabClick: ClosetState["setActiveTab"];
   layers: ClosetState["layers"];
-  items: ClosetState["CLOTHES_BY_CATEGORY"][ICategory];
+  items: ClosetState["clothesByCategory"][ICategory];
   onSelectClothing: ClosetState["handleSelectClothing"];
 }
