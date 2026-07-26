@@ -5,6 +5,7 @@ export interface ITab {
   id: number;
   icon: JSX.Element;
   value: ICategory | "";
+  label: string;
 }
 
 export interface ITabsProps {

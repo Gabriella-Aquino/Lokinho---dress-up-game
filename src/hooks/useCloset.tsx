@@ -28,23 +28,56 @@ export function useCloset() {
       id: 1,
       icon: <HairIcon width={28} height={28} className="scale-z-150" />,
       value: "hair",
+      label: "Cabelo",
     },
     {
       id: 2,
       icon: <HairItemIcon color="white" width={28} height={28} />,
       value: "items",
+      label: "Itens de cabelo",
     },
-    { id: 3, icon: <RingIcon width={28} height={28} />, value: "" },
-    { id: 4, icon: <PiDressFill color="white" size={28} />, value: "dress" },
-    { id: 5, icon: <FaTshirt color="white" size={28} />, value: "shirt" },
-    { id: 6, icon: <GiSkirt color="white" size={28} />, value: "bottoms" },
-    { id: 7, icon: <CoatIcon color="white" />, value: "coat" },
+    {
+      id: 3,
+      icon: <RingIcon width={28} height={28} />,
+      value: "",
+      label: "Acessórios",
+    },
+    {
+      id: 4,
+      icon: <PiDressFill color="white" size={28} />,
+      value: "dress",
+      label: "Vestido",
+    },
+    {
+      id: 5,
+      icon: <FaTshirt color="white" size={28} />,
+      value: "shirt",
+      label: "Blusa",
+    },
+    {
+      id: 6,
+      icon: <GiSkirt color="white" size={28} />,
+      value: "bottoms",
+      label: "Parte de baixo",
+    },
+    {
+      id: 7,
+      icon: <CoatIcon color="white" />,
+      value: "coat",
+      label: "Casaco",
+    },
     {
       id: 8,
       icon: <ShoesIcon fill="white" width={28} height={28} />,
       value: "shoes",
+      label: "Sapatos",
     },
-    { id: 9, icon: <SockIcon width={28} height={28} />, value: "socks" },
+    {
+      id: 9,
+      icon: <SockIcon width={28} height={28} />,
+      value: "socks",
+      label: "Meias",
+    },
   ];
   const [layers, setLayers] = useState<Partial<Record<ICategory, IClothing>>>({
     shirt: {

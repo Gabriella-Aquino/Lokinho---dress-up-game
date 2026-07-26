@@ -32,13 +32,17 @@ function TabsCol({ tabs, itemsPerPage = 5, onTabClick, activeTab }: TabsColProps
 
       <div className="flex flex-col gap-3 items-center">
         {visibleTabs.map((tab) => (
-          <div
+          <button
+            type="button"
             key={tab.id}
+            aria-label={tab.label}
+            aria-selected={tab.id === activeTab.id}
+            role="tab"
             className={cn(["py-1.5 px-1.5 rounded-full bg-primary cursor-pointer flex items-center justify-center hover:bg-accent transition-colors",tab.id === activeTab.id && "bg-accent"])}
             onClick={() => onTabClick(tab)}
           >
             {tab.icon}
-          </div>
+          </button>
         ))}
       </div>
 

@@ -94,8 +94,12 @@ function Tabs({ tabs, activeTab, onTabClick }: ITabsProps) {
         className="mx-8"
       >
         {tabs.map((tab) => (
-          <div
+          <button
+            type="button"
             key={tab.id}
+            aria-label={tab.label}
+            aria-selected={tab.id === activeTab.id}
+            role="tab"
             className={cn(
               "relative z-50 flex w-min cursor-pointer rounded-2xl px-3 py-2 transition-colors",
               tab.id === activeTab.id ? "bg-accent" : "bg-primary hover:bg-accent"
@@ -103,7 +107,7 @@ function Tabs({ tabs, activeTab, onTabClick }: ITabsProps) {
             onClick={() => onTabClick(tab)}
           >
             {tab.icon}
-          </div>
+          </button>
         ))}
       </Carousel>
     </div>
