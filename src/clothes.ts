@@ -142,7 +142,7 @@ export const bottom: IClothing[] = [
   },
   {
     id: 5,
-    name: "calça jeans",
+    name: "calça jeans florida",
     category: "bottoms",
     image: "/assets/Bottom/calça_jeans_flores.png",
     imageToShow: "/assets/Bottom/toShow/calça_jeans_flores_to_show.png",
