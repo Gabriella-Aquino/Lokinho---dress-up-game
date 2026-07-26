@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
   bottom,
   coat,
@@ -32,7 +32,7 @@ export function useCloset() {
     {
       id: 2,
       icon: <HairItemIcon color="white" width={28} height={28} />,
-      value: "hat",
+      value: "items",
     },
     { id: 3, icon: <RingIcon width={28} height={28} />, value: "" },
     { id: 4, icon: <PiDressFill color="white" size={28} />, value: "dress" },
@@ -42,7 +42,7 @@ export function useCloset() {
     {
       id: 8,
       icon: <ShoesIcon fill="white" width={28} height={28} />,
-      value: "coat",
+      value: "shoes",
     },
     { id: 9, icon: <SockIcon width={28} height={28} />, value: "socks" },
   ];
@@ -90,10 +90,6 @@ export function useCloset() {
     socks: socks,
     shoes: shoes,
   });
-
-  useEffect(() => {
-    console.log("Layers atuais:", layers);
-  }, [layers]);
 
   return {
     TABS,
