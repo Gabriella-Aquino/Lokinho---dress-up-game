@@ -33,13 +33,13 @@ export function useCloset() {
     {
       id: 2,
       icon: <HairItemIcon color="white" width={28} height={28} />,
-      value: "items",
+      value: "hat",
       label: "Itens de cabelo",
     },
     {
       id: 3,
       icon: <RingIcon width={28} height={28} />,
-      value: "",
+      value: "items",
       label: "Acessórios",
     },
     {

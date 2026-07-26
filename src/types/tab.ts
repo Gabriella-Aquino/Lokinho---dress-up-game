@@ -4,7 +4,7 @@ import type { ICategory } from "./clothing";
 export interface ITab {
   id: number;
   icon: JSX.Element;
-  value: ICategory | "";
+  value: ICategory;
   label: string;
 }
 

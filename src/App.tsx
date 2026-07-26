@@ -12,9 +12,7 @@ function App() {
     layers,
     handleSelectClothing,
   } = useCloset();
-  const activeItems = activeTab.value
-    ? clothesByCategory[activeTab.value]
-    : [];
+  const activeItems = clothesByCategory[activeTab.value];
   const isDesktop = useMediaQuery("(min-width: 768px)");
 
   return (
