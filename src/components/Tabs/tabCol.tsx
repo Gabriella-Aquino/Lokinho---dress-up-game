@@ -1,13 +1,10 @@
 import { useState } from "react";
 import { cn } from "../../lib/utils";
 import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
-import type { ITab } from "../../types/tab";
+import type { ITabsProps } from "../../types/tab";
 
-interface TabsProps {
-  tabs:ITab[];
-  activeTab: ITab;
+interface TabsProps extends ITabsProps {
   itemsPerPage?: number;
-  onTabClick: (tab: ITab) => void;
 }
 
 function TabsCol({ tabs, itemsPerPage = 5, onTabClick, activeTab }: TabsProps) {

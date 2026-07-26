@@ -6,13 +6,8 @@ import Carousel, {
 import "react-multi-carousel/lib/styles.css";
 import { cn } from "../../lib/utils";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
-import type { ITab } from "../../types/tab";
+import type { ITabsProps } from "../../types/tab";
 
-interface TabsProps {
-  tabs: ITab[];
-  activeTab: ITab;
-  onTabClick: (tab: ITab) => void;
-}
 const responsive: ResponsiveType = {
   desktop: {
     breakpoint: { max: 1920, min: 1280 },
@@ -83,7 +78,7 @@ const CustomRightArrow = ({ onClick, className }: ArrowProps) => (
   </button>
 );
 
-function Tabs({ tabs, activeTab, onTabClick }: TabsProps) {
+function Tabs({ tabs, activeTab, onTabClick }: ITabsProps) {
   const carouselRef = useRef<Carousel>(null);
 
   return (

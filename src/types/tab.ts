@@ -6,3 +6,9 @@ export interface ITab {
   icon: JSX.Element;
   value: ICategory | "";
 }
+
+export interface ITabsProps {
+  tabs: ITab[];
+  activeTab: ITab;
+  onTabClick: (tab: ITab) => void;
+}
