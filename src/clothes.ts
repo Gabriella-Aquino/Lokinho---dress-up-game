@@ -1,4 +1,4 @@
-import type { IClothing } from "./types/clothe";
+import type { IClothing } from "./types/clothing";
 
 export const hat = [];
 

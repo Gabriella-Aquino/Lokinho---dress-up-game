@@ -1,4 +1,4 @@
-import type { ICategory } from "../../types/clothe";
+import type { ICategory } from "../../types/clothing";
 import type { ITab } from "../../types/tab";
 import type { useCloset } from "../../hooks/useCloset";
 

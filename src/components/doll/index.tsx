@@ -1,4 +1,4 @@
-import type { ICategory, IClothing } from "../../types/clothe";
+import type { ICategory, IClothing } from "../../types/clothing";
 import { CLOTHES_ORDER } from "../../clothesOrder";
 import { cn } from "../../lib/utils";
 

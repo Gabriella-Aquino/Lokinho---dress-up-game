@@ -11,7 +11,7 @@ import {
   socks,
 } from "../clothes";
 import { FaTshirt } from "react-icons/fa";
-import type { ICategory, IClothing } from "../types/clothe";
+import type { ICategory, IClothing } from "../types/clothing";
 import { PiDressFill } from "react-icons/pi";
 import { GiSkirt } from "react-icons/gi";
 import HairIcon from "../../public/assets/icon/hair.svg?react";

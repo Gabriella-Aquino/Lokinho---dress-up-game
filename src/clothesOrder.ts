@@ -1,4 +1,4 @@
-import type { ICategory } from "./types/clothe";
+import type { ICategory } from "./types/clothing";
 
 export const CLOTHES_ORDER: Record<ICategory, number> = {
   hat: 90,

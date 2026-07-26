@@ -1,16 +1,16 @@
 import { cn } from "../../lib/utils";
-import type { IClothing } from "../../types/clothe";
+import type { IClothing } from "../../types/clothing";
 import { Shape } from "./variants";
 
 type ShapeVariants = keyof typeof Shape;
 
-interface ClothCardProps {
+interface ClothingCardProps {
   item: IClothing;
   shape?: ShapeVariants;
   onClick: () => void;
 }
 
-function ClothCard({ item, shape = "square", onClick }: ClothCardProps) {
+function ClothingCard({ item, shape = "square", onClick }: ClothingCardProps) {
   return (
     <button
       type="button"
@@ -31,4 +31,4 @@ function ClothCard({ item, shape = "square", onClick }: ClothCardProps) {
   );
 }
 
-export default ClothCard;
+export default ClothingCard;
