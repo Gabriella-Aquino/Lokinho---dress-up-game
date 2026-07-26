@@ -1,6 +1,5 @@
 import DesktopLayout from "./components/layouts/DesktopLayout";
 import MobileLayout from "./components/layouts/MobileLayout";
-import type { ICategory } from "./types/clothing";
 import { useCloset } from "./hooks/useCloset";
 import { useMediaQuery } from "./hooks/useMediaQuery";
 
@@ -13,7 +12,9 @@ function App() {
     layers,
     handleSelectClothing,
   } = useCloset();
-  const activeItems = clothesByCategory[activeTab.value as ICategory];
+  const activeItems = activeTab.value
+    ? clothesByCategory[activeTab.value]
+    : [];
   const isDesktop = useMediaQuery("(min-width: 768px)");
 
   return (
