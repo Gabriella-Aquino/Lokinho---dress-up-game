@@ -1,6 +1,6 @@
 import Wardrobe from "../Wardrobe";
 import Doll from "../doll";
-import TabsCol from "../Tabs/tabCol";
+import TabsCol from "../Tabs/TabsCol";
 import type { ClosetLayoutProps } from "./types";
 
 function MobileLayout({

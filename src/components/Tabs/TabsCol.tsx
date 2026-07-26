@@ -3,11 +3,11 @@ import { cn } from "../../lib/utils";
 import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
 import type { ITabsProps } from "../../types/tab";
 
-interface TabsProps extends ITabsProps {
+interface TabsColProps extends ITabsProps {
   itemsPerPage?: number;
 }
 
-function TabsCol({ tabs, itemsPerPage = 5, onTabClick, activeTab }: TabsProps) {
+function TabsCol({ tabs, itemsPerPage = 5, onTabClick, activeTab }: TabsColProps) {
   const [page, setPage] = useState(0);
 
   const start = page * itemsPerPage;
@@ -34,18 +34,10 @@ function TabsCol({ tabs, itemsPerPage = 5, onTabClick, activeTab }: TabsProps) {
         {visibleTabs.map((tab) => (
           <div
             key={tab.id}
-            className={cn(["py-1.5 px-1.5 rounded-full bg-primary cursor-pointer flex items-center justify-center hover:bg-accent transition-colors",tab.id == activeTab.id && "bg-accent"])}
+            className={cn(["py-1.5 px-1.5 rounded-full bg-primary cursor-pointer flex items-center justify-center hover:bg-accent transition-colors",tab.id === activeTab.id && "bg-accent"])}
             onClick={() => onTabClick(tab)}
           >
-            {typeof tab.icon === "string" ? (
-              <img
-                src={tab.icon}
-                alt={tab.value}
-                className="w-[28px] h-[28px]"
-              />
-            ) : (
-              tab.icon
-            )}
+            {tab.icon}
           </div>
         ))}
       </div>
