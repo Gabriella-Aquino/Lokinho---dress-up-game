@@ -1,5 +1,8 @@
 import { useRef } from "react";
-import Carousel, { type ResponsiveType } from "react-multi-carousel";
+import Carousel, {
+  type ButtonGroupProps,
+  type ResponsiveType,
+} from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { cn } from "../../lib/utils";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
@@ -33,10 +36,9 @@ interface ArrowProps {
   onClick?: () => void;
 }
 
-const Group = ({ next, previous, ...rest }: any) => {
-  const {
-    carouselState: { currentSlide, slidesToShow, totalItems },
-  } = rest;
+const Group = ({ next, previous, carouselState }: ButtonGroupProps) => {
+  const { currentSlide = 0, slidesToShow = 0, totalItems = 0 } =
+    carouselState ?? {};
 
   const canGoBack = currentSlide !== 0;
   const canGoForward = currentSlide + slidesToShow < totalItems;
